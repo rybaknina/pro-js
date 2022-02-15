@@ -23,21 +23,21 @@
       </p>
       <div class="container">
         <ul class="cart">
-          <li class="cart-item" v-bind:key="id" v-for="id of cart">
-            <h3>{{ id.title }}</h3>
-            <p class="cart-item-price">{{ id.price }}</p>
-            <p class="cart-item-quantity">Quantity: {{ id.count }}</p>
-            <button class="btn-delete" v-on:click="removeFromCart(id.id)">Delete from cart</button>
+          <li class="cart-item" v-bind:key="item.id" v-for="item of cart">
+            <h3>{{ item.title }}</h3>
+            <p class="cart-item-price">{{ item.price }}</p>
+            <p class="cart-item-quantity">Quantity: {{ item.count }}</p>
+            <button class="btn-delete" v-on:click="removeFromCart(item.id)">Delete from cart</button>
           </li>
         </ul>
       </div>
     </div>
     <div class="container">
       <ul class="catalog">
-        <li class="catalog-item" v-bind:key="id" v-for="id of catalog">
-          <h3>{{ id.title }}</h3>
-          <p class="catalog-item-price">{{ id.price }}</p>
-          <button class="btn-add" v-on:click="addToCart(id)">Add to cart</button>
+        <li class="catalog-item" v-bind:key="item.id" v-for="item of catalog">
+          <h3>{{ item.title }}</h3>
+          <p class="catalog-item-price">{{ item.price }}</p>
+          <button class="btn-add" v-on:click="addToCart(item)">Add to cart</button>
         </li>
       </ul>
     </div>
